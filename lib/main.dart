@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   // This widget is the root of your application.
+  // Clasificación de Imagenes
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
             seedColor: const Color.fromARGB(255, 8, 4, 187)),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'IA Home Page'),
+      home: const MyHomePage(title: 'IA VGG16'),
     );
   }
 }
@@ -51,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,
-        backgroundColor: const Color.fromARGB(193, 12, 25, 206),
+        backgroundColor: const Color.fromARGB(193, 50, 62, 229),
         foregroundColor: Colors.white,
         leadingWidth: 110,
         title: Text(
@@ -68,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Container(
               height: 250,
               width: MediaQuery.of(context).size.width,
-              color: const Color.fromARGB(193, 12, 25, 206)),
+              color: const Color.fromARGB(193, 16, 30, 235)),
         ),
       ),
       body: Center(
@@ -108,7 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
       child: IconButton(
           onPressed: () async {
             var archivo = await _picker.pickImage(
-                source: ImageSource.camera, imageQuality: 25);
+                source: ImageSource.gallery, imageQuality: 25);
             //await _picker.pickImage(source: ImageSource.gallery);
 
             if (archivo != null) {
@@ -122,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
           icon: colorBotton == false
               ? const Icon(
                   CupertinoIcons.camera_fill,
-                  color: Color.fromARGB(255, 0, 201, 7),
+                  color: Color.fromARGB(255, 8, 218, 15),
                   size: 30.0,
                 )
               : const Icon(
@@ -198,13 +199,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
-                  color: Color.fromARGB(255, 13, 138, 50),
+                  color: Color.fromARGB(255, 9, 86, 32),
                 ),
               ),
               subtitle: Text(
                 'Class ID: ${prediction['class_id']}\nProbability: ${(prediction['probability'] * 100).toStringAsFixed(2)}%',
                 style: const TextStyle(
-                  color: Color.fromARGB(255, 83, 110, 91),
+                  color: Color.fromARGB(255, 69, 92, 76),
                 ),
               ),
             ),

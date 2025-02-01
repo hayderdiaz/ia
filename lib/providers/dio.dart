@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 
 class DioProvider {
   final String _uriPrd = 'http://52.71.55.169:8720/';
-  final String _uriQa = 'http://3.92.244.70:8720/';
+  final String _uriQa = 'http://54.161.52.202:8720/';
 
   //Post upload imagen
   Future<dynamic> postUploadImage1(FormData formData) async {
